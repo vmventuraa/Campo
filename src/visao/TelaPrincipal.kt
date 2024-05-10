@@ -4,6 +4,11 @@ import modelo.Tabuleiro
 import modelo.TabuleiroEvento
 import java.awt.BorderLayout
 import java.awt.Image
+import java.io.File
+import java.net.URL
+import javax.sound.sampled.AudioInputStream
+import javax.sound.sampled.AudioSystem
+import javax.sound.sampled.Clip
 import javax.swing.*
 
 fun main(args: Array<String>) {
@@ -11,6 +16,9 @@ fun main(args: Array<String>) {
 }
 
 class TelaPrincipal : JFrame() {
+    private lateinit var audio : URL
+    private lateinit var ais : AudioInputStream
+    private lateinit var clip : Clip
 
     private val tabuleiro = Tabuleiro(qtdeLinhas = 16, qtdeColunas = 30, qtdeMinas = 50)
     private val painelTabuleiro = PainelTabuleiro(tabuleiro)
@@ -53,10 +61,22 @@ class TelaPrincipal : JFrame() {
                 TabuleiroEvento.VITORIA -> {
 
                     icon = vitoriaIcon
+                    audio = URL("https://www.wavsource.com/snds_2020-10-01_3728627494378403/sfx/cheering.wav")
+                    ais = AudioSystem.getAudioInputStream(audio)
+                    clip = AudioSystem.getClip()
+                    clip.open(ais)
+                    clip.start()
+
                 }
                 TabuleiroEvento.DERROTA -> {
 
                     icon = derrotaIcon
+                    audio = URL("https://www.wavsource.com/snds_2020-10-01_3728627494378403/sfx/bomb_x.wav")
+                    ais = AudioSystem.getAudioInputStream(audio)
+                    clip = AudioSystem.getClip()
+                    clip.open(ais)
+                    clip.start()
+
                 }
             }
 
