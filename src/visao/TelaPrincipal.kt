@@ -4,7 +4,6 @@ import modelo.Tabuleiro
 import modelo.TabuleiroEvento
 import java.awt.BorderLayout
 import java.awt.Image
-import java.io.File
 import java.net.URL
 import javax.sound.sampled.AudioInputStream
 import javax.sound.sampled.AudioSystem
