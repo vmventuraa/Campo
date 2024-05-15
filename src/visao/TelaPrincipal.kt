@@ -19,16 +19,20 @@ class TelaPrincipal : JFrame() {
     private lateinit var ais : AudioInputStream
     private lateinit var clip : Clip
 
-    private val tabuleiro = Tabuleiro(qtdeLinhas = 16, qtdeColunas = 30, qtdeMinas = 50)
+
+    // alterado linha 1 e coluna 2 do tabuleiro e quantidade de minas 3
+    private val tabuleiro = Tabuleiro(qtdeLinhas = 10, qtdeColunas = 10, qtdeMinas = 0)
     private val painelTabuleiro = PainelTabuleiro(tabuleiro)
 
+    //alterado ícone do app 4
     val imgURL = javaClass.getResource("/images/bomb1.png")
     val img = ImageIcon(imgURL)
 
-
+    //alterado mensagem de vitória para ícone 5
     val vitoriaUrl = javaClass.getResource("/images/vitoria.png")
     val vitoriaIcon = ImageIcon(vitoriaUrl)
 
+    //alterado mensagem de derrota para ícone 6
     val derrotaUrl = javaClass.getResource("/images/game-over.png")
     val derrotaIcon = ImageIcon(derrotaUrl).apply {
         // Definindo o novo tamanho do ícone
@@ -46,6 +50,8 @@ class TelaPrincipal : JFrame() {
         setSize(690, 438)
         setLocationRelativeTo(null)
         defaultCloseOperation = EXIT_ON_CLOSE
+
+        //alterado título do app 7
         title = "Campo Minado FIAP"
         isVisible = true
     }
@@ -88,6 +94,7 @@ class TelaPrincipal : JFrame() {
             panel.add(label, BorderLayout.CENTER) // Adiciona o JLabel centralizado
 
             // Exibe a mensagem com o ícone de derrota centralizado
+            //alterada mensagem para "resultado" 8
             JOptionPane.showMessageDialog(this, panel, "Resultado", JOptionPane.CLOSED_OPTION)
             tabuleiro.reiniciar()
 

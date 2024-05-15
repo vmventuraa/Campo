@@ -9,6 +9,7 @@ import javax.swing.ImageIcon
 import javax.swing.JButton
 import javax.swing.SwingUtilities
 
+// Aletradas cores de números e botões 9, 10
 private val COR_BG_NORMAL = Color(126, 76, 23)
 private val COR_BG_MARCACAO = Color(225, 225, 225)
 private val COR_BG_EXPLOSAO = Color(225, 225, 225)
